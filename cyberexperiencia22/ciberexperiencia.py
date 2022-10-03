@@ -265,3 +265,155 @@ w1 >> loop("37.1-chicharrasRio.wav",dur=8,amp=15,bpf=0,room=0.1,mix=0.2,pan=[1,-
 w2 >> loop("42.1-chicharrasLejanas.wav",dur=8,amp=15,hpf=0,pan=[-1,1,0.4,-0.2]).spread()
 
 w4 >> marimba((2,0),amp=0.0,dur=1,oct=4,mix=0.4,room=0.2)
+
+
+############## added
+
+
+
+
+
+
+
+
+########################################################
+
+
+
+# me derrito en marte
+Clock.bpm=130
+
+
+d1 >> play("|x2| |x3| x-(-[-o])", dur=[3/4,3/4,1/2], pan=PRand([-1,1]), rate=[1,2,0.5,-1], amp=1).stop()
+
+
+d2 >> play("|x2|  x  xx   x", dur=[2/4], amp=1.4).stop()
+
+h1 >>  play("-- [---] -- -- --", dur=3/4,amp=2,tremolo=2).stop()
+
+d3 >> saw([7,1,3], dur=2/4, amp=1.59, oct=3,lpf=5000,sus=1.2).stop()
+
+d4 >> sinepad(d3.pitch + [0,9], amp=1, pan=[1,-1], dur=[4,1], room=0, lpf=5000)
+
+d5 >> sinepad(d3.pitch + [0], amp=0.00, pan=[1,-1], dur=[1], room=0.8, lpf=5000,oct=[6,4]).spread()
+
+
+
+b1 >> dub(d4.pitch +[7,9,13], amp=0.9,oct=2, dur=[3/1,1/4])
+
+l1 >> swell(d4.pitch +[7,9,13,11], amp=0.0, oct=3,hpf=1500, dur=[1/4,2/4]).spread()
+
+y1 >> blip([0,4,7],dur=1,amp=0.7,mix=0.1,room=0.2)
+
+Group(d3,d4,d5).amp=0.0
+
+solo()
+
+
+## andromeda me apuñaleo
+
+z1 >> play("|x2| H x  x  H  |x2|  x-x x-x  [x-x-x[x-x-x]  x-x ]", dur=[2/4], hpf=0, sample=1, amp=3).stop()
+
+z2 >> play("-----", pan=-1, amp=1)
+
+z3 >> play("[---] - - - [---]", pan=1, dur=3/4, amp=2.5)
+
+z4 >> blip(PRand([13,14,16,8]), dur=[1/4, 3/4, 1/2], room=5, pan=PRand([-1,-0.5,1,1.5,0.5]),amp=9, reverse=12,rate=50, lpf=600).spread()
+
+z5 >> zap(j4.pitch +[6,9,13,4], pan=0, dur=[3/4,3/6], tremolo=2,amp=4)
+
+#i went to detroit to have sex online
+
+Scale.default = "dorian"
+
+print(Scale.names())
+
+o2 >> play("|v1|[|-6|]",bpm=160)
+
+o2 >> play("|v1|[|-6||-6||v2|]",bpm=160)
+
+o1 >> loop("cumbia100.wav",dur=0.9,coarse=9,pshift=-11,pan=PRand([-1,0.3,-0.2,0.5,1]))
+
+b2 >> dub(d4.pitch +[12], amp=0.4, oct=3,hpf=50, dur=[1/4])
+
+b2 >> dub(d4.pitch +[12,16], amp=0.4, oct=3,hpf=50, dur=[1/4])
+
+b2 >> dub(d4.pitch +PRand([12,16,8,4,25]), amp=0.4, oct=[5],hpf=500, dur=[1/4, 4/3])
+
+b3 >> play("|A5| xx xghxhx",bpm=160)
+
+b3.stop()
+
+
+Clock.clear()
+
+print(Samples)
+
+##fumandome un bareto en el cementerio de limón
+
+u1 >> loop("cumbia99.wav",dur=2,pshift=-5,amp=1).stop()
+
+u2 >> loop("cumbia35.wav",dur=0.5,coarse=[(1,rest(8)),3,5],amp=0.7,pan=PRand([-1,0.5,-0.5,0.3,0,1,-0.6]))
+
+t1 >> play("|T2|   ",amp=1,dur=1,coarse=3)
+
+u2.solo(0)
+
+u2.stop()
+
+t1.stop()
+
+t1 >> play("|T2| ",amp=1,sus=4,echo=8)
+
+c1 >> jbass([1,7,9], amp=0.0, dur=[7,6,4], hpf=150,oct=4, sus=5).spread()
+
+m2 >> marimba([13,6,18], amp=2.2, dur=[1/4,3/4], pan=0, hpf=100, room=2)
+
+m2.stop()
+
+m3 >> glass([1,5], amp=3, pan=[-1,1],tremolo=0)
+
+m3.stop()
+
+m4 >> play ("-h- |v2||v1| -- xhxhx-  xxx", amp=2, sample=2, tremolo=2)
+
+m4.stop()
+
+Clock.clear()
+
+m6 >> play("|x2| ",amp=3)
+
+m6.stop()
+
+m7 >> play("h  - hh ---- [---hhh] hh--  ---- ----  [h-h-h-h-h-h-h]", dur=1/4, amp=3,pan[1,-1])
+
+m7.stop()
+
+##fumando cerdo con una coquita light
+
+q1 >> loop("pig1",pshift=-5,amp=[0.0,0.01],dur=4,bpm=140).spread().stop()
+
+q1.solo(0)
+
+q2 >> play("|A2|o |A1|o |x2|o",bpm=140).spread().stop()
+
+q2.solo(0)
+
+q6 >> play("[|t2|--]",bpm=140,amp=0.0)
+
+q3 >> loop("tapanti", bpm=20, amp=6,pan=-1,pshift=1).spread().stop()
+
+q4 >> stretch("jilgueri",dur=50, pan=0, amp=0.0,chop=7).spread().stop()
+
+q5 >> space(PRand([1,4,5,6]),dur=PRand([1/4,1/2,1/3,1/7,1/4]),bpm=70,amp=0.0).spread().stop()
+
+
+q6 >> play("fh   -[-fx]   fv  v x x[hvxvx]    vxf --- [-----] |x2| |x3| |A2|", amp=2,coarse=7).spread().stop()
+
+q7 >> pulse([8,5,8,6,8,4], dur= [1/4,2/3,3/7], amp=1.5,oct=2,hpf=2000).stop()
+
+q8 >> soft([2,2.5,3,3.5,6,6.5,7,9.4], amp=0.0, dur=[1/4,6/3,3,1/5,3/4])
+
+q9 >> play ("xx --xx --xh").stop()
+
+
